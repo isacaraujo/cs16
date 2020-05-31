@@ -1,0 +1,128 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Counter-Strike dedicated server
+Parameters:
+  InstanceType:
+    Type: String
+  InstanceImage:
+    Type: String
+  Keypair:
+    Type: AWS::EC2::KeyPair::KeyName
+  AvailabilityZone:
+    Type: String
+  SubnetId:
+    Type: String
+  VpcId:
+    Type: String
+  ServerName:
+    Type: String
+  SteamId:
+    Type: String
+  RconPassword:
+    Type: String
+  ServerPassword:
+    Type: String
+Resources:
+  Ec2InstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: cstrike-ds-instance
+      GroupDescription: counter-strike and ssh ports
+      SecurityGroupIngress:
+      - CidrIp: 0.0.0.0/0
+        FromPort: 22
+        IpProtocol: tcp
+        ToPort: 22
+      - CidrIp: 0.0.0.0/0
+        FromPort: 26900
+        IpProtocol: udp
+        ToPort: 26900
+      - CidrIp: 0.0.0.0/0
+        FromPort: 27020
+        IpProtocol: udp
+        ToPort: 27020
+      - CidrIp: 0.0.0.0/0
+        FromPort: 27015
+        IpProtocol: udp
+        ToPort: 27015
+      - CidrIp: 0.0.0.0/0
+        FromPort: 27015
+        IpProtocol: tcp
+        ToPort: 27015
+      VpcId: !Ref VpcId
+  Ec2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceType
+      AvailabilityZone: !Ref AvailabilityZone
+      ImageId: !Ref InstanceImage
+      KeyName: !Ref Keypair
+      InstanceInitiatedShutdownBehavior: terminate
+      NetworkInterfaces:
+      - AssociatePublicIpAddress: true
+        DeleteOnTermination: true
+        DeviceIndex: '0'
+        GroupSet: 
+        - !Ref Ec2InstanceSecurityGroup
+        SubnetId: !Ref SubnetId
+      BlockDeviceMappings:
+      - DeviceName: /dev/sda1
+        Ebs:
+          VolumeSize: 8
+          DeleteOnTermination: true
+      Tags:
+      - Key: Name
+        Value: cstrike-16-dedicated-server-single
+      UserData:
+        Fn::Base64:
+          Fn::Sub:
+            - |
+              #cloud-config
+              write_files:
+                - path: /etc/csds/env.secret
+                  permissions: 0644
+                  owner: ubuntu
+                  content: |
+                    SERVER_NAME=${ServerName}
+                    ADMIN_STEAM=${SteamId}
+                    RCON_PASSWORD=${RconPassword}
+                    SERVER_PASSWORD=${ServerPassword}
+              runcmd:
+                - apt-get update
+                - apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common git
+                - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+                - apt-key fingerprint 0EBFCD88
+                - add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+                - apt-get update
+                - apt-get install -y docker-ce docker-ce-cli containerd.io
+                - usermod -aG docker ubuntu
+                - curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+                - chmod +x /usr/local/bin/docker-compose
+                - mkdir /usr/app
+                - git clone -b setup_server https://github.com/isacaraujo/cs16.git /usr/app
+                - cp /etc/csds/env.secret /usr/app/env.secret
+                - |
+                  chown -R ubuntu:ubuntu /usr/app
+                - cd /usr/app && docker-compose up -d
+                - |
+                  /opt/aws/bin/cfn-signal -e 0 \
+                    --region ${Region} \
+                    --stack ${StackName} \
+                    --resource Ec2Instance
+            - {
+              StackName: !Ref "AWS::StackName",
+              Region: !Ref "AWS::Region",
+              ServerName: !Ref ServerName,
+              SteamId: !Ref SteamId,
+              RconPassword: !Ref RconPassword,
+              ServerPassword: !Ref ServerPassword
+            }
+Outputs:
+  InstanceId:
+    Description: "InstanceId of the newly created EC2 instance"
+    Value: !Ref Ec2Instance
+  PublicDNS:
+    Description: "Public DNSName of the newly created EC2 instance"
+    Value: !GetAtt Ec2Instance.PublicDnsName
+  PublicIP:
+    Description: "Public IP address of the newly created EC2 instance"
+    Value: !GetAtt Ec2Instance.PublicIp
