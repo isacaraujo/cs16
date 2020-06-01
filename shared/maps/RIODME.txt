@@ -1,0 +1,151 @@
+Rio de Janeiro (cs_rio) v.1.3 for Counter-Strike
+By Mataleone & Crocodilo
+http://mataleone.counter-strike.com.br/
+
+================================
+==  INFORMACOES EM PORTUGUES  ==
+================================
+(english info below)
+
+AUTORES
+-------
+Design, mapa e texturas por Roger Mataleone - mataleone@yahoo.com - http://mataleone.counter-strike.com.br/
+Design e texturas por Joca Crocodilo - videcom@terra.com.br
+PODBot Waypoints por RuBones & DarkLord - http://www.biritahq.hpg.com.br/podwpts.html
+RealBot Waypoints por Steven Denman - denmsd@yahoo.co.uk
+
+INFORMACOES SOBRE O MAPA
+------------------------
+Jogo                : Half-Life (http://www.sierrastudios.com/games/half-life/)
+Mod                 : Counter-Strike (http://www.counter-strike.net/)
+Nome do Mapa        : Rio de Janeiro (cs_rio)
+Tipo                : Hostage Rescue
+Numero de Jogadores : Recomendado para 10, mas aguenta ate 32
+Tempo de Desenvolv. : +- 6 meses, trabalhando apenas 2 noites por semana
+Tempo de Compilacao : 8:20 horas numa Sun Sparc Ultra 1
+Editores usados     : Valve큦 WorldCraft 3.3 com ZHLT 2.5.1 & 2.3.1 (sun)
+Outros programas    : Adobe Photoshop 4.0 & 5.5, Valve큦 makels & qlumpy,
+                      WasabiSoft SkyPaint 1.10, WaveLenght Sprite Wizard 1.1
+Waypoints para Bots : Disponiveis para PODBot (http://www.nuclearbox.com/podbot/)
+                      e RealBot (http://bot.counter-strike.net/realbot/)
+
+INSTALACAO
+------------
+Deszipar todos os arquivos no seu diretorio Half-Life/cstrike.
+Nao ha jeito de espalhar nenhum tipo de virus virtual ou organico atraves dos
+arquivos de instalacao!
+
+INFORMACOES SOBRE A VERSAO 1.3
+------------------------------
+A versao 1.3 eh TOTALMENTE COMPATIVEL com as versoes anteriores (1.0, 1.1 e 1.2),
+sendo que APENAS O SERVIDOR precisa estar com a versao 1.2 para um jogo com 32
+jogadores. Ou seja, NINGUEM precisa atualizar o seu cs_rio para jogar em servidores
+de 32 jogadores, basta o servidor estar atualizado e rodando com 32 jogadores.
+Os jogadores apenas precisas fazer o upgrade para poder ver o mapa no novo modo
+espectador introduzino no CS 1.4.
+As diferencas entre a versao 1.3 e 1.0 sao:
+- Suporta 32 jogadores
+- Bug do refem no CS 1.5 corrigido
+- Novos waypoints compativeis com o PODBot 2.5
+- Overviews para o HLTV
+- As balas perdidas estao funcionando como deveriam
+- Easter egg diferente.
+
+CONTATO
+-------
+Qualquer comentario, sugestao, bug, ofertas, doacoes, ameacas, convites para
+festas ou seja la o que for, mande para mataleone@yahoo.com
+
+COPYRIGHT
+---------
+cs_rio tem copyright 2001/2002. Voce pode distribuir este mapa contanto que nao
+haja modificacao nem omissao de nenhum arquivo. Por favor nos consulte antes de
+distribuir este arquivo em CDs ou outras midias.
+
+Por favor nao use este mapa ou suas texturas como base para construir outros
+mapas. Nao me peca os fontes que eu nao pretendo passar para ninguem!
+
+AGRADECIMENTOS
+--------------
+Beavis, pelo Rap!
+Gunslinger do counter-strike.de!
+Galera da Zenkei e Unnamed!
+Angel da Monkey, por trazer a CPL para o Brasil e por todo o seu suporte!
+Rubones e DarkLord pelos waypoints!
+Chessfighta e Steven Denman pelos primeiros waypoints!
+LordVader, Tsunami, HitKiller, MigNaz e toda Hardmob pelo cs.com.br!
+Mureta pelos beta-tests!
+Todos os servers que fizeram do cs_rio esse sucesso, principalmente
+ao 9hells (www.9hells.org) e Usina CS (www.usinacs.cjb.net)!
+Todos aqueles que votaram no cs_rio elegendo-o o mapa do ano pelo QBranch
+
+Divirtam-se!
+
+
+
+
+
+============================
+==  ENGLISH  INFORMATION  ==
+============================
+
+AUTHORS
+-------
+Design, mapping & textures by Roger Mataleone - mataleone@yahoo.com - http://mataleone.counter-strike.com.br/
+Design & textures by Joca Crocodilo - videcom@terra.com.br
+PODBot Waypoints by RuBones & DarkLord - http://www.biritahq.hpg.com.br/podwpts.html
+RealBot Waypoints by Steven Denman - denmsd@yahoo.co.uk
+
+MAP INFO
+--------
+Game           : Half-Life (http://www.sierrastudios.com/games/half-life/)
+Mod            : Counter-Strike (http://www.counter-strike.net/)
+Map name       : Rio de Janeiro (cs_rio)
+Map Type       : Hostage Rescue
+# of Players   : Recommended for 10, but can sustain 32
+Mapping time   : +- 6 months, working just 2 nights a week
+Compile time   : 8:20 hours on a Sun Sparc Ultra 1
+Editor used    : Valve큦 WorldCraft 3.3 with ZHLT 2.5.1 & 2.3.1 (sun)
+Other Tools    : Adobe Photoshop 4.0 & 5.5, Valve큦 makels & qlumpy,
+                 WasabiSoft SkyPaint 1.10, WaveLenght Sprite Wizard 1.1
+Bots Waypoints : Available for PODBot (http://www.nuclearbox.com/podbot/)
+                 and RealBot (http://bot.counter-strike.net/realbot/)
+
+INSTALLATION
+------------
+Unzip all the files to your Half-Life/cstrike directory.
+For an english map briefing screen, remove the file cs_rio.txt and rename
+cs_riobeta_en.txt to cs_rio.txt.
+There큦 NO way of spreading any kid of computer or organic virus through these
+files!
+
+VERSION 1.3 INFORMATION
+-----------------------
+The version 1.3 is TOTALLY COMPATIBLE with all older version (1.0, 1.1 and 1.2).
+ONLY THE SERVER needs to be updated for a 32 players game. The players DON'T NEED
+TO UPDATE their cs_rio to join a 32-player server, they can connect with the original
+cs_rio. The players just need to upgrade to be able to watch the map in the new
+spectator mode introduced on CS 1.4.
+The diferences between version 1.2 and 1.0 are:
+- 32 player spawns
+- Hostage bug on CS 1.5 fixed
+- Stray bullets now work as they should
+- New waypoints compatible with PODBot 2.5
+- HLTV overviews included
+- New Easter Egg
+
+FEEDBACK
+--------
+Any comments, suggestions, bug report, offers, donations, threats, blackmail,
+party invitations or whatever, please send to mataleone@yahoo.com
+
+COPYRIGHT INFORMATION
+---------------------
+cs_rio is copyright 2001/2002. You may distribute this file freely with NO
+modifications and NO file omissions. Please ask my permission to distribute
+this file on commercial CDs or other medias.
+
+Authors MAY NOT use this level or the textures on this level as a base to build
+additional levels.
+
+Now find a server and play it!

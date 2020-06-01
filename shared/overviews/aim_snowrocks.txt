@@ -1,0 +1,14 @@
+//overview description file for aim_snowrocks.bsp
+
+global
+{
+	ZOOM	2.02
+	ORIGIN	320            528	     304
+	ROTATED 0
+}
+
+layer
+{
+	IMAGE	"overviews/aim_snowrocks.bmp"
+	HEIGHT	-1.00
+} 
