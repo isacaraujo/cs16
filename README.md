@@ -106,4 +106,5 @@ docker logs -f cs
 
 ## TODO
 
-- [ ] Install CSDM: https://github.com/thillux/hlds-docker
+- [ ] Docker image with so many plugins: https://github.com/thillux/hlds-docker
+- [ ] About CSDM 2.1.3: https://forums.alliedmods.net/showpost.php?s=b83b77018bc0577ea27dbaf7be241915&p=403286&postcount=1
