@@ -103,3 +103,7 @@ You also can see all game logs by running:
 ```
 docker logs -f cs
 ```
+
+## TODO
+
+- [ ] Install CSDM: https://github.com/thillux/hlds-docker
